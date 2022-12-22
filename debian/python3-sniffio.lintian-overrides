@@ -1,0 +1,4 @@
+# The extended description is descriptive enough to fully explain what this
+# package does and to provide users with enough information to decide whether
+# they want to install it and what it contains.
+python3-sniffio: extended-description-is-probably-too-short

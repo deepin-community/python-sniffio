@@ -1,0 +1,20 @@
+Source: python-sniffio
+Section: python
+Priority: optional
+Standards-Version: 4.2.1.2
+Maintainer: Robie Basak <robie@justgohome.co.uk>
+Build-Depends: debhelper (>= 9~),
+               debhelper-compat (= 13),
+               dh-python,
+               python3,
+               python3-pytest,
+               python3-setuptools
+X-Python3-Version: >= 3.7
+Homepage: https://github.com/python-trio/sniffio
+
+Package: python3-sniffio
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: detect which async Python library is in use
+ Python libraries that support multiple async packages (like Trio, asyncio,
+ etc) need to know which is in use. This library provides this information.

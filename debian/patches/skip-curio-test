@@ -1,0 +1,16 @@
+Author: Robie Basak <robie@justgohome.co.uk>
+Description: Skip curio test
+ Debian doesn't package curio so it cannot be tested here.
+Forwarded: not-needed
+Last-Update: 2020-02-23
+
+--- a/sniffio/_tests/test_sniffio.py
++++ b/sniffio/_tests/test_sniffio.py
+@@ -45,6 +45,7 @@
+         current_async_library()
+ 
+ 
++@pytest.mark.skip("Debian doesn't package curio so it cannot be tested here")
+ @pytest.mark.skipif(sys.version_info < (3, 6), reason='Curio requires 3.6+')
+ def test_curio():
+     import curio

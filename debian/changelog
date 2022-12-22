@@ -1,0 +1,27 @@
+python-sniffio (1.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Use debhelper-compat and bump to 13.
+  * debian/patches/skip-curio-test: update to follow upstream changes.
+
+ -- Robie Basak <robie@justgohome.co.uk>  Sun, 07 Nov 2021 20:16:21 +0000
+
+python-sniffio (1.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop hacks to build with >= Python 3.7 as it is now default:
+    - d/control: straightforward Build-Depends on python3 and Depends on
+      ${python3:Depends} instead of manual specification.
+    - d/rules: drop custom PYBUILD_INTERPRETERS and PYBUILD_VERSIONS.
+    - Drop lintian overrides no longer necessary.
+    - Updating d/README.source makes it empty, so remove it.
+  * Skip curio test as it is not packaged in Debian so cannot be performed as
+    part of the package build.
+
+ -- Robie Basak <robie@justgohome.co.uk>  Sun, 23 Feb 2020 16:23:02 +0000
+
+python-sniffio (1.0.0-1) unstable; urgency=low
+
+  * Initial release. Closes: #910956.
+
+ -- Robie Basak <robie@justgohome.co.uk>  Sat, 13 Oct 2018 23:02:29 +0100
