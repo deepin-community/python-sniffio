@@ -1,2 +1,4 @@
 version=4
-https://pypi.debian.net/sniffio/sniffio-(.+)\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))
+opts=filenamemangle=s/.*\/v([\d\.]+.*)$/python-sniffio-$1/ \
+https://github.com/python-trio/sniffio/tags \
+/python-trio/sniffio/archive/refs/tags/v([\d\.]+)\.tar\.gz

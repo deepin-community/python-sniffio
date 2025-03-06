@@ -1,0 +1,8 @@
+Document: python-trio-doc
+Title: Python sniffio documentation
+Author: Nathaniel J. Smith <njs@pobox.com>
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-sniffio-doc/html/index.html
+Files: /usr/share/doc/python-sniffio-doc/html/*.html
