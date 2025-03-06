@@ -1,20 +1,47 @@
 Source: python-sniffio
 Section: python
 Priority: optional
-Standards-Version: 4.2.1.2
-Maintainer: Robie Basak <robie@justgohome.co.uk>
-Build-Depends: debhelper (>= 9~),
-               debhelper-compat (= 13),
-               dh-python,
-               python3,
-               python3-pytest,
-               python3-setuptools
-X-Python3-Version: >= 3.7
+Standards-Version: 4.6.2
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders:
+ Robie Basak <robie@justgohome.co.uk>,
+ Michael Fladischer <fladi@debian.org>,
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-pytest,
+ python3-setuptools,
+ python3-sphinx,
+ python3-sphinx-rtd-theme,
+ python3-sphinxcontrib.trio,
+ python3-trio,
 Homepage: https://github.com/python-trio/sniffio
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-sniffio
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-sniffio.git
+Rules-Requires-Root: no
+
+Package: python-sniffio-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ ${sphinxdoc:Depends},
+Description: detect which async Python library is in use (Documentation)
+ Python library that support multiple async packages (like Trio, asyncio,
+ etc) need to know which is in use. This library provides this information.
+ .
+ This package contains the documentation.
 
 Package: python3-sniffio
 Architecture: all
-Depends: ${misc:Depends}, ${python3:Depends}
-Description: detect which async Python library is in use
- Python libraries that support multiple async packages (like Trio, asyncio,
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+Description: detect which async Python library is in use (Python3 version)
+ Python library that support multiple async packages (like Trio, asyncio,
  etc) need to know which is in use. This library provides this information.
+ .
+ This package contains the Python 3 version of the library.

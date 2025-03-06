@@ -1,1 +1,2 @@
-skip-curio-test
+0001-Skip-curio-test.patch
+0002-Use-local-objects.inv-in-intersphinx-mapping.patch

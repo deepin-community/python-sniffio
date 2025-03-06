@@ -1,0 +1,47 @@
+From: Michael Fladischer <FladischerMichael@fladi.at>
+Date: Tue, 7 Nov 2023 16:04:41 +0000
+Subject: Use local objects.inv in intersphinx mapping.
+
+---
+ docs/source/conf.py | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+diff --git a/docs/source/conf.py b/docs/source/conf.py
+index 7fb30ff..2332045 100644
+--- a/docs/source/conf.py
++++ b/docs/source/conf.py
+@@ -19,6 +19,7 @@
+ #
+ import os
+ import sys
++import trio
+ # So autodoc can import our package
+ sys.path.insert(0, os.path.abspath('../..'))
+ 
+@@ -51,6 +52,26 @@ intersphinx_mapping = {
+     "python": ('https://docs.python.org/3', None),
+     "trio": ('https://trio.readthedocs.io/en/stable', None),
+ }
++def check_object_path(key, url, path):
++    if os.path.isfile(path):
++        return {key: (url, path)}
++    return {}
++
++intersphinx_mapping = {}
++intersphinx_mapping.update(
++    check_object_path(
++        'python',
++        'https://docs.python.org/{v.major}.{v.minor}'.format(v=sys.version_info),
++        '/usr/share/doc/python{v.major}.{v.minor}/html/objects.inv'.format(v=sys.version_info)
++    )
++)
++intersphinx_mapping.update(
++    check_object_path(
++        'trio',
++        f'https://trio.readthedocs.io/en/v{trio.__version__}/',
++        '/usr/share/doc/python-trio-doc/html/objects.inv'
++    )
++)
+ 
+ autodoc_member_order = "bysource"
+ 

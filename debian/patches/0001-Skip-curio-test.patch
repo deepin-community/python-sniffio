@@ -1,0 +1,25 @@
+From: Robie Basak <robie@justgohome.co.uk>
+Date: Tue, 7 Nov 2023 13:28:02 +0000
+Subject: Skip curio test
+
+Forwarded: not-needed
+Last-Update: 2023-11-07
+
+Debian doesn't package curio so it cannot be tested here.
+---
+ sniffio/_tests/test_sniffio.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sniffio/_tests/test_sniffio.py b/sniffio/_tests/test_sniffio.py
+index 02945a9..6ce6076 100644
+--- a/sniffio/_tests/test_sniffio.py
++++ b/sniffio/_tests/test_sniffio.py
+@@ -64,7 +64,7 @@ def test_asyncio():
+     "curio broken on 3.12 (https://github.com/python-trio/sniffio/pull/42)",
+ )
+ def test_curio():
+-    import curio
++    curio = docutils = pytest.importorskip("curio")
+ 
+     with pytest.raises(AsyncLibraryNotFoundError):
+         current_async_library()

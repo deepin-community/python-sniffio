@@ -1,3 +1,48 @@
+python-sniffio (1.3.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 02 Jun 2024 20:46:03 +0100
+
+python-sniffio (1.3.0-2) unstable; urgency=medium
+
+  * Use same short description as library package for documentation.
+  * Better copyright format, especially for debian/* files.
+
+ -- Michael Fladischer <fladi@debian.org>  Wed, 08 Nov 2023 08:33:28 +0000
+
+python-sniffio (1.3.0-1) unstable; urgency=medium
+
+  * New upstream version 1.3.0
+  * Add debian/gbp.conf.
+  * Use github.com in d/watch.
+  * Run wrap-and-sort -bast to reduce diff size of future changes.
+  * Refresh patches.
+  * Remove unused lintian overrides.
+  * Add upstream metadata.
+  * Enable upstream testsuite for autopkgtests.
+  * Install package metadata using d/pybuild.testfiles.
+  * Set DPT as maintainer and Robie Basak and myself as uploaders, as approved
+    by Robie.
+  * Bump Standards-Version to 4.6.2.
+  * Remove debhelper from Build-Depends, debhelper-compat is already there.
+  * Build-Depend on python3-all instead of python3 for better test coverage
+    with multiple Python versions.
+  * Build using pybuild-plugin-pyproject.
+  * Drop X-Python3-Version field.
+  * Use DPT salsa repository for Vcs-* fields.
+  * Set Rules-Requires-Root: no.
+  * Use a more common package description for python3-sniffio.
+  * Set github repository as primary source in d/copyright.
+  * Export PYBUILD_NAME in d/rules.
+  * Build and ship documentation in python-sniffio-doc package.
+  * Clean up artifacts in sniffio.egg-info to allow two builds in a row.
+  * Add patch to use local objects.inv in intersphinx mapping.
+  * Add python3-trio to Build-Depends, required for intersphinx patch.
+
+ -- Michael Fladischer <fladi@debian.org>  Tue, 07 Nov 2023 16:10:47 +0000
+
 python-sniffio (1.2.0-1) unstable; urgency=medium
 
   * New upstream release.
